@@ -135,7 +135,26 @@ public class Player {
 	}
 	public String getCurrentItems()
 	{
-		String itemsSeen = "<h3>You see:</h3><ul>";
+		String itemsSeen = "";
+		switch(currentRoom.getRoomID()) {
+		case 1: itemsSeen += "<img src=\"http://cdn.bulbagarden.net/upload/thumb/4/47/451Skorupi.png/250px-451Skorupi.png\" alt=\"Foyer\">";
+		break;
+		case 2: itemsSeen += "<img src=\"http://elitechoice.org/wp-content/uploads/2013/04/steinway_sons_louis_xv_gold-piano.jpg\" alt=\"Front Room\">";
+		break;
+		case 3: itemsSeen += "<img src=\"http://cdn.bulbagarden.net/upload/thumb/7/75/167Spinarak.png/250px-167Spinarak.png\" alt=\"Library\">";
+		break;
+		case 4: itemsSeen += "<img src=\"http://cdn.bulbagarden.net/upload/thumb/d/da/041Zubat.png/250px-041Zubat.png\" alt=\"Kitchen\">";
+		break;
+		case 5: itemsSeen += "<img src=\"http://www.maciejratajski.com/sites/default/files/work/image/ratajski-knowledge-1.jpg\" alt=\"Dining Room\" height=\"200\">";
+		break;
+		case 6: itemsSeen += "<img src=\"https://upload.wikimedia.org/wikipedia/commons/8/87/WinonaSavingsBankVault.JPG\" alt=\"Vault\" height=\"200\">";
+		break;
+		case 7: itemsSeen += "<img src=\"http://vignette2.wikia.nocookie.net/darksouls/images/a/a8/Mimic.png/revision/latest?cb=20130714135545\" alt=\"Parlor\">";
+		break;
+		case 8: itemsSeen += "<img src=\"http://i.imgur.com/2378cuH.jpg\" alt=\"Secret Room\" height=\"200\">";
+		break;
+		}
+		itemsSeen += "<h3>You see:</h3><ul>";
 		ArrayList<String> current = currentRoom.getItems();
 		for(String item: current) {
 			itemsSeen += "<li>" + item + "</li>";
